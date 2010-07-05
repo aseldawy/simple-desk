@@ -1,0 +1,3 @@
+config/odesk.yml
+db/*sqlite3
+log/*log
