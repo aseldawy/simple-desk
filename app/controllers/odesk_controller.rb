@@ -1,2 +1,0 @@
-class OdeskController < ApplicationController
-end
