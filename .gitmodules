@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/ror_desk"]
+	path = vendor/plugins/ror_desk
+	url = git://github.com/aseldawy/ror_desk.git
