@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Simple Desk by BadrIT</title>
+  </head>
+  <body>
+    <div class="header">
+      Welcome, <%= @odesk_connector.auth_user.first_name %> |
+      <%= link_to "logout", @odesk_connector.logout_url %>
+    </div>
+    <h1>Simple Desk</h1>
+    <%= yield %>
+  </body>
+</html>

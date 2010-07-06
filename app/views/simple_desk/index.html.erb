@@ -1,32 +1,20 @@
-<div class="header">Welcome, <%= @odesk_connector.auth_user.first_name %></div>
-<h1>Simple Desk</h1>
-<h2>Recent Activity</h2>
-<div class="recent_activity">
-  <% if @work_diary.empty? %>
-    No activity in the last 24 hours
-  <% else %>
-    <% @work_diary.each do |company, snapshot| -%>
-      <%= company.compnary_name %>
-      <%= image_tag snapshot.screenshot_img %> <br />
-      <%= image_tag snapshot.screenshot_url %> <br />
-      Activity: <%= "*" * snapshot.activity %> <br />
-    <% end -%>
-  <% end %>
-</div>
-
-<h2>Suggested job openings</h2>
-<div class="jobs">
-  <% if @jobs && jobs.any? -%>
-    <ul>
-      <% @jobs.each do |skill, job| -%>
-        <li><b><%= skill.skl_name %></b>: <%= link_to job.op_title, "http://www.odesk.com/jobs/#{job.ciphertext}" %></li>
+<h2>Working hours for this week</h2>
+<div class="time_report">
+  <table>
+    <% if @time_report.empty? -%>
+      No time logged for this week.<br/>
+      Want to search for cool new jobs?
+      <% form_tag({:action=>'search_jobs'}, :method=>:get) do -%>
+        <%= text_field_tag :query %>
+        <%= submit_tag "search" %>
       <% end -%>
-    </ul>
-  <% else -%>
-    No jobs available for you
-  <% end -%>
-</div>
-
-<div class="footer">
-  <%= link_to "logout oDesk", @odesk_connector.logout_url %>
+    <% else -%>
+      <% @time_report.each do |entry| -%>
+        <tr>
+          <td><%= entry['team_name'] %></td>
+          <td><%= format_hours(entry['hours']) %></td>
+        </tr>
+      <% end -%>
+    <% end -%>
+  </table>
 </div>

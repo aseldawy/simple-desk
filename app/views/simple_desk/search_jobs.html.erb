@@ -1,0 +1,6 @@
+<h1>Available jobs</h1>
+<% @jobs.each do |job| %>
+  <div class="job">
+    <%= link_to(job.op_title[0], "http://www.odesk.com/jobs/"+job.ciphertext) %>
+  </div>
+<% end -%>
