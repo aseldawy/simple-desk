@@ -1,0 +1,105 @@
+--- !ruby/object:Gem::Specification 
+name: ruby_desk
+version: !ruby/object:Gem::Version 
+  hash: 63
+  prerelease: false
+  segments: 
+  - 0
+  - 8
+  - 0
+  version: 0.8.0
+platform: ruby
+authors: 
+- Ahmed ElDawy
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-07-07 00:00:00 +03:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: json
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :runtime
+  version_requirements: *id001
+description: A gem that works as an interface for oDesk APIs that can be used for both desktop and web applications
+email: ahmed.eldawy@badrit.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- LICENSE
+- README.rdoc
+files: 
+- LICENSE
+- README.rdoc
+- Rakefile
+- VERSION
+- lib/categories
+- lib/ruby_desk.rb
+- lib/ruby_desk/connector.rb
+- lib/ruby_desk/job.rb
+- lib/ruby_desk/odesk_entity.rb
+- lib/ruby_desk/provider.rb
+- lib/ruby_desk/snapshot.rb
+- lib/ruby_desk/team_room.rb
+- lib/ruby_desk/time_report.rb
+- test/empty_timereport.json
+- test/helper.rb
+- test/jobs.json
+- test/profile.json
+- test/providers.json
+- test/snapshot.json
+- test/teamrooms.json
+- test/test_ruby_desk.rb
+- test/timereport.json
+- test/timereport_error.json
+- test/workdiary.json
+has_rdoc: true
+homepage: http://github.com/aseldawy/ruby_desk
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: Wrapper for oDesk APIs in Ruby
+test_files: 
+- test/helper.rb
+- test/test_ruby_desk.rb
