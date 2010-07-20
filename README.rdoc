@@ -1,10 +1,35 @@
 = Simple Desk
-
 This is a sample application that lets you learn how to use RoR Desk (http://www.github.com/aseldawy/ror_desk) and Ruby Desk (http://www.github.com/aseldawy/ruby_desk).
 It is not meant to be a replacement for oDesk at all.
 It is just a small demonstration of how to use RoR Desk plugin in a real application.
 You'll not find every small piece of oDesk APIs in this sample applicaiton.
 They're just two or three APIs that are used to be a guide for you.
+
+= How to install
+Simple Desk uses git submodules to include the plugin ror_desk.
+You'll have to do the following steps to install it with submodules.
+
+  git clone git://github.com/aseldawy/simple-desk.git
+  cd simple-desk
+  git submodule init
+  git submodule update
+
+There's not database in Simple Desk.
+It uses oDesk APIs to retrieve data and it doesn't have to store anything locally.
+
+The next step is to include your oDesk API key and secret.
+Create a sample odesk.yml file.
+  cp vendor/plugins/ror_desk/config/odesk.yml config
+
+Open the file 'config/odesk.yml' and include your keys under the correct environment.
+Be sure that the callback for your API key directs to the running instance of your application.
+In my case, I create an API keys set for development with a callback
+  http://localhost:3000/odesk
+
+, and create another set for production which directs to the production instance.
+
+After setting up oDesk keys correctly, you can now run and test using
+  script/server
 
 = Questions
 Please if you have any questions, don't hesitate to send me an email on my GitHub account.
